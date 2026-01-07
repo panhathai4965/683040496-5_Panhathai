@@ -1,0 +1,76 @@
+"""
+Burawitchaya Rongthong
+683040492-3
+P2
+"""
+
+class BankAccount:
+    # Class attribute
+    branch_name = "KKU Complex"
+    branch_number = 1724
+    last_loan_number = 0
+    last_saving_number = 0
+
+    # Private class attributes
+    # account types
+    __type_saving = 1
+    __type_loan = 2
+
+    # Constructor
+    def __init__(self,name,type = "saving",balance = 0):
+        self.name = name
+        self.type = type.lower()
+        self.balance = balance
+        if self.type == "saving":
+            BankAccount.last_saving_number += 1
+            self.account_number = f"{BankAccount.branch_number}-1-{BankAccount.last_saving_number}"
+        elif self.type == "loan":
+            BankAccount.last_loan_number += 1
+            self.account_number = f"{BankAccount.branch_number}-2-{BankAccount.last_loan_number}"
+
+    # Instance methods
+    def print_customer(self):
+    
+        print("----- Customer Record -----")
+        print(f"Name: {self.name}")
+        print(f"Acccpunt number: {self.account_number}")
+        print(f"Account type: {self.type}")
+        print(f"Balance: {self.balance}")
+        print(f"----- End Record ----")
+
+    def deposit(self, amount=0):
+        self.balance += amount
+        return self.balance
+    
+    def pay_loan(self, amount=0):
+        self.balance += amount
+        return self.balance
+
+    def main():
+        john = BankAccount("John", "saving", balance = 500)
+        john.print_customer()
+        print("John asks to deposit 3,000 more and see the current balance.")
+        john.deposit(3000)
+        john.print_customer()
+
+        tim = BankAccount("Tim", "loan", balance = -1000000)
+        tim.print_customer()
+        print("Tim wants to see the loan balance and he wants to pay half of the balance right away.")
+        money = tim.balance
+        tim.pay_loan((money//2)*(-1))
+        tim.print_customer()
+
+        Sarah1 = BankAccount("Sarah", "saving")
+        print("Sarah wants to deposit 50,000,000")
+        Sarah1.deposit(50000000)
+        print("Sarah wants to open another loan account for -100,000,000")
+        Sarah2 = BankAccount("Sarah", "loan", balance = -100000000)
+
+        print("Finally, show the account information of all accounts.")
+        john.print_customer()
+        tim.print_customer()
+        Sarah1.print_customer()
+        Sarah2.print_customer()
+if __name__ == "__main__":
+    BankAccount.main()
+                
