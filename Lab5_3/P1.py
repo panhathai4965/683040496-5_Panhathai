@@ -1,6 +1,7 @@
 """""
 Panhathai Suporn
 683040496-5
+P1
 """""
 
 from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,

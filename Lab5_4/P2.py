@@ -1,3 +1,9 @@
+"""
+Panhathai Suporn
+683040496-5
+P2
+"""
+
 import sys
 import random
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, 

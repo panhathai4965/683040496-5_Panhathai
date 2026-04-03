@@ -1,7 +1,7 @@
 """
 Panhathai Suporn
 683040496-5
-P2
+Main P2
 """
 
 from datetime import datetime

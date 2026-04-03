@@ -1,7 +1,7 @@
 """
 Panhathai Suporn
 683040496-5
-P1
+P1 room
 """
 
 from abc import ABC, abstractmethod
